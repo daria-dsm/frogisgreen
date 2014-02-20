@@ -1,3 +1,2 @@
 all: 
-        g++ main.cpp -o helloworld
-
+        g++ helloworld.cpp -o helloworld

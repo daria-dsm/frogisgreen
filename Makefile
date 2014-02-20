@@ -1,15 +1,14 @@
-CC = ${CROSS_COMPILE}gcc
-CFLAGS = -Wall
-TARGET = helloworld
-OBJS = helloworld.o
-INCDIR = .
-LIBDIR = .
+CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp 
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=hello
 
-${TARGET} : $(OBJS)
-	${CC} ${CFLAGS} ${OBJS} -L ${LIBDIR} -o ${TARGET}
+all: $(SOURCES) $(EXECUTABLE)
+    
+$(EXECUTABLE): $(OBJECTS) 
+    $(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-helloworld.o: helloworld.c
-	${CC} ${CFLAGS} -I ${INCDIR} -c helloworld.c
-
-clean:
-	rm -f ${TARGET} ${OBJS} *~
+.cpp.o:
+    $(CC) $(CFLAGS) $< -o $@

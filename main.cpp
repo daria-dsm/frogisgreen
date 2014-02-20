@@ -1,11 +1,7 @@
-
-
-
 #include <stdio.h>
 
-
- main()
-{
-    printf("Hell-o,world!") ;
-
-}
+int main()
+ {
+	   printf("Hello world\n");
+	   return 0;
+ }

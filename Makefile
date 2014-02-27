@@ -11,8 +11,14 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 .cpp.o:
+<<<<<<< HEAD
 	$(CC) $(CFLAGS) $< -o $@
 	
 clean:   rm -rf *.o hello
 
 
+=======
+    $(CC) $(CFLAGS) $< -o $@
+    
+clean: 
+     rm -rf *.o hello

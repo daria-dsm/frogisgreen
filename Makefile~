@@ -1,37 +1,25 @@
- CC=g++
+CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp hello.cpp factorial.cpp
+SOURCES=main.cpp 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=hello
 
 all: $(SOURCES) $(EXECUTABLE)
     
 $(EXECUTABLE): $(OBJECTS) 
-    $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 .cpp.o:
+<<<<<<< HEAD
+	$(CC) $(CFLAGS) $< -o $@
+	
+clean:   rm -rf *.o hello
+
+
+=======
     $(CC) $(CFLAGS) $< -o $@
-
-
-# OE after 30July2010
-TOOLDIR = ${OETMP}/sysroots/`uname -m`-linux/usr/armv7a/bin
-STAGEDIR = ${OETMP}/sysroots/armv7a-angstrom-linux-gnueabi/usr
-
-CC = ${CROSS_COMPILE}gcc
-CFLAGS = -Wall
-TARGET = helloworld
-OBJS = helloworld.o
-INCDIR = .
-LIBDIR = .
-
-${TARGET} : $(OBJS)
-	${CC} ${CFLAGS} ${OBJS} -L ${LIBDIR} -o ${TARGET}
-
-helloworld.o: helloworld.c
-	${CC} ${CFLAGS} -I ${INCDIR} -c helloworld.c
-
-clean:
-	rm -f ${TARGET} ${OBJS} *~
-
-
+    
+clean: 
+     rm -rf *.o hello
+>>>>>>> 2bb2c01130297fd2c713b5802fe8510bafe4d031
